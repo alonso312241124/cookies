@@ -14,7 +14,7 @@ const mostarPreferencias = function (req, res) {
 const ponerCookie = function (req, res) {
     let intereses = req.body.intereses
     if(intereses){
-        let cookie = res.cookie('preferencias', intereses, {maxAge: 60000, path: '/'}) 
+        res.cookie('preferencias', intereses, {maxAge: 60000, path: '/'}) 
         res.status(200).send('Anuncio guardado');
     }else{
         console.log("Error")
